@@ -1,0 +1,9 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{%static 'igirl/style.css'%}">
+{% if best_articles_list %}
+  <ul> {% for article in best_articles_list %}
+    <li><a href="{%url "igirl:article" article.id%}">{{article.title}}</a></li>
+       {% endfor %}</ul>
+{% else %}
+  <p>No articles are available.</p>
+{% endif %}

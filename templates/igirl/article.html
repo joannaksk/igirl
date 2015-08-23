@@ -1,0 +1,9 @@
+<h1>{{article.title}}</h1>
+ {%if error_message %}
+   <p><strong>
+      {{error_message}}
+   </strong></p>
+ {%endif%}
+{% for field in object %}
+    <li><b>{{ field.label }}:</b> {{ field.data }}</li>
+{% endfor %}
